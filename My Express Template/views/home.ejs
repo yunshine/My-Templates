@@ -1,8 +1,27 @@
+<link rel="stylesheet" type="text/css" href="app.css" />
+
 <!-- the route is coming from line 23 of idex.js file... -->
 
 <!-- this h2 has embedded JS in it... -->
-<h2>The param is: <% somethingToPass%></h2>
+<h2>The param is: <%= somethingToPass%></h2>
 
-<h3>Another param is <% idToPass%></h3>
+<h3>Another param is <% idToPass %></h3>
+
+<!-- *** How to control flow with ESJ tags... *** -->
+<!-- Notice that the ESJ tags here are at the start and end of lines that start and end Javascript AND there are no equals signs... -->
+
+<!-- ***  ESJ TAG DIFFERENCES***
+<%=  %>  =>  The value that is returned inside will be rendered to page and added to the HTML.
+
+<%  %> =>   This is for logic that is not suppused to be displayed.
+-->
+
+<% if (somethingToPass === "Yun") { %>
+<!-- this part below is supposed to be displayed... -->
+<h3>Nice! My name happens to be Yun!</h3>
+<h3>more code to run here...</h3>
+<% } else { %>
+<h3>Too bad. You should have chosen Yun.</h3>
+<% } %>
 
 <p>PS This is the home.ejs file...</p>
