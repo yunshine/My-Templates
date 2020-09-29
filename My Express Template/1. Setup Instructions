@@ -21,9 +21,7 @@ npm install body-parser --save
 
 
 
-
+*** to start running the app... ***
 node ***name of file***
-
-npm start ???
 
 ^C (to cancel)
