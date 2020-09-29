@@ -46,7 +46,7 @@ app.post("/addfriend", function (req, res) {
   // the "newfriend" in req.body.newfriend below comes from name="newfriend" from the <input>"
   let newFriendName = req.body.newfriend;
   friends.push(newFriendName);
-  res.redirect('friends.ejs');
+  res.redirect('/friends');
 };
 
 app.get('/friends', function (req, res) {
@@ -55,7 +55,7 @@ app.get('/friends', function (req, res) {
 
 //  *** USE A * AS A DEFAULT CATCH ALL ***
 app.get('*', function (req, res) {
-  res.render('YOU ARE A STAR!!!');
+  res.send('YOU ARE A STAR!!!');
 });
 
 
