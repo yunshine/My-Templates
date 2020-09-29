@@ -9,8 +9,12 @@ git init
 npm install express --save
 
 
-*** Install EJS to create view files & update the dependencies in the package.json file ***
+*** Install EJS to create ejs/view files & update the dependencies in the package.json file ***
 npm install ejs --save
+
+
+*** Install body-parser to pull objects from the body of post requests & update the dependencies in the package.json file ***
+npm install body-parser --save
 
 
 *** ALL EJS files need to be in a views folder/directory... ***

@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.use(express.static('public'));
 // app.set('view engine', 'ejs');
@@ -8,19 +9,19 @@ app.use(express.static('public'));
 
 // "/" => "Hi there!"  *** DEFAULT ROUTE ***
 app.get('/', function (req, res) {
-  res.send('Hi there!');
+  res.render('Hi there!');
 });
 
 // "/dog" => "MEOW!"  *** Another Route ***
 app.get('/dog', function (req, res) {
   console.log('SOMEONE MADE A REQUEST TO /DOG!!!');
-  res.send('<h2>MEOW!</h2>');
+  res.render('<h2>MEOW!</h2>');
 });
 
 //  *** USING  :  FOR PARAMS ***
 app.get('/r/:subredditName', function (req, res) {
   var subreddit = req.params.subredditName;
-  res.send('WELCOME TO THE ' + subreddit.toUpperCase() + ' SUBREDDIT!');
+  res.render('WELCOME TO THE ' + subreddit.toUpperCase() + ' SUBREDDIT!');
 });
 
 //  *** Render an HTML/EJS FILE... ***
@@ -28,16 +29,28 @@ app.get('/home/:something/:id', function (req, res) {
   let somethingVar = req.params.something;
   let idVar = req.params.id;
 
-  res.send('home.ejs', {
+  res.render('home.ejs', {
     somethingToPass: somethingVar,
     idToPass: idVar,
   });
-  res.send('<h2>A random message...</h2>');
+  res.render('<h2>A random message...</h2>');
 });
+
+app.get('/friends', function (req, res) {
+  let friends = ["Woo", "Eugene", "Jason", "Cliff", "Eugene"];
+
+  res.render('friends.ejs', { friends: friends });
+});
+
+//   *** POST Route => see form on friends.ejs ***
+// BE SURE TO npm install body-parser --save
+app.post("/addfriend", function (req, res) {
+  res.send('');
+};
 
 //  *** USE A * AS A DEFAULT CATCH ALL ***
 app.get('*', function (req, res) {
-  res.send('YOU ARE A STAR!!!');
+  res.render('YOU ARE A STAR!!!');
 });
 
 // Tell Express to listen for requests (start server)...
