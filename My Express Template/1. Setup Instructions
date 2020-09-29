@@ -1,0 +1,25 @@
+*** In the project's folder/directory... ***
+
+
+*** Create a package.json ***
+git init
+
+
+*** Install Express & update the dependencies in the package.json file ***
+npm install express --save
+
+
+*** Install EJS to create view files & update the dependencies in the package.json file ***
+npm install ejs --save
+
+
+*** ALL EJS files need to be in a views folder/directory... ***
+
+
+
+
+node ***name of file***
+
+npm start ???
+
+^C (to cancel)
