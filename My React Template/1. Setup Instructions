@@ -1,0 +1,12 @@
+npx create-react-app my-app
+
+
+*** or to create an app in an existing folder... ***
+
+npx create-react-app .
+
+
+npm start
+
+
+^C (to cancel)

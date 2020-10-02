@@ -44,6 +44,7 @@ let friends= ["Woo", "Eugene", "Jason", "Cliff", "Eugene"];
 // BE SURE TO npm install body-parser --save
 app.post("/addfriend", function (req, res) {
   // the "newfriend" in req.body.newfriend below comes from name="newfriend" from the <input>"
+    // *** to get data from a query string use this: req.query.newfriend ***
   let newFriendName = req.body.newfriend;
   friends.push(newFriendName);
   res.redirect('/friends');
