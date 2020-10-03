@@ -15,6 +15,7 @@ npm install ejs --save
 
 *** Install body-parser to pull objects from the body of post requests & update the dependencies in the package.json file ***
 npm install body-parser --save
+npm install nodemon --save-dev (this package will automatically restart the server when app.js is re-saved)
 
 
 *** ALL EJS files need to be in a views folder/directory... ***
@@ -23,5 +24,28 @@ npm install body-parser --save
 
 *** to start running the app... ***
 node ***name of file***
+...or... 
+nodemon ***name of file***  (this package will automatically restart the server when app.js is re-saved)
 
 ^C (to cancel)
+
+
+
+
+
+*** MongoDB and Mongoose Instructions ***
+
+*** Install MongoDB ***
+npm install mongodb --save
+npm install mongodb-core kerberos node-gyp bson --save 
+
+*** Install mongoose ***
+npm install mongoose --save
+
+
+*** to start; you need to keep this running in the background ***
+brew services run mongodb-community
+
+*** to stop... ***
+brew services stop mongodb-community
+

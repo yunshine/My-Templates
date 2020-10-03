@@ -2,7 +2,7 @@ RESTFUL ROUTES
 
 Name               URL               Verb               Description
 =====================================================================
-INDEX		/cafes              GET               Display a list of all cafes
+INDEX		  /cafes               GET                Display a list of all cafes
 NEW               /cafes/new       GET                Displays form to make a new cafe
-CREATE         /cafes               POST             Add new cafe to DB
+CREATE         /cafes               POST              Add new cafe to DB
 SHOW            /cafes/:id          GET                Shows info about one cafe

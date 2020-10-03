@@ -2,9 +2,36 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/collocafe', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('Connected to DB!'))
+  .catch(error => console.log(error.message));
+
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 // app.set('view engine', 'ejs');
+
+
+// SCHEMA SETUP
+var cafeSchema = new mongoose.Schema({
+  name: String,
+  area: String
+});
+
+var Cafe = mongoose.model('Cafe', cafeSchema);
+
+// Cafe.create({ name: "Cafe Kitsune", area: "Aoyama" }, function (err, cafe) {
+//   if (err) {
+//     console.log(error);
+//   } else {
+//     console.log("New Cafe: ");
+//     console.log(cafe);
+//   }
+// });
+
 
 //  ***** ROUTES *****
 
@@ -37,12 +64,12 @@ app.get('/home/:something/:id', function (req, res) {
 });
 
 
-// Route to New Cafe Form
+// New Route to New Cafe Form
 app.get("/cafes/new", function (req, res) {
   res.render("new.ejs");
 });
 
-//CREATE - add new campground to DB
+// CREATE Route - add new cafe to DB
 app.post("/cafes", function(req, res){
     // get data from form and add to cafes array
     var name = req.body.name;
