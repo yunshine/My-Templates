@@ -37,6 +37,29 @@ app.get('/home/:something/:id', function (req, res) {
 });
 
 
+// Route to New Cafe Form
+app.get("/cafes/new", function (req, res) {
+  res.render("new.ejs");
+});
+
+//CREATE - add new campground to DB
+app.post("/cafes", function(req, res){
+    // get data from form and add to cafes array
+    var name = req.body.name;
+    var image = req.body.image;
+    var desc = req.body.description;
+    var newCafe = {name: name, image: image, description: desc}
+    // Create a new campground and save to DB
+    Cafe.create(newCafe, function(err, newlyCreated){
+        if(err){
+            console.log(err);
+        } else {
+            //redirect back to cafes page
+            res.redirect("/cafes");
+        }
+    });
+});
+
 //   *** POST Route => see form on friends.ejs ***
 let friends= ["Woo", "Eugene", "Jason", "Cliff", "Eugene"];
 
