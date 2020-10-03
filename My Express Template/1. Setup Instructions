@@ -49,3 +49,6 @@ brew services run mongodb-community
 *** to stop... ***
 brew services stop mongodb-community
 
+
+db.collection.drop()
+
