@@ -13,9 +13,18 @@ npm install express --save
 npm install ejs --save
 
 
+*** Install method-override to work around the fact that PUT and DELETE requests aren't supported in HTML ***
+npm install method-override --save
+
+
 *** Install body-parser to pull objects from the body of post requests & update the dependencies in the package.json file ***
 npm install body-parser --save
 npm install nodemon --save-dev (this package will automatically restart the server when app.js is re-saved)
+
+
+*** Install method-override to work around the fact that PUT and DELETE requests aren't supported in HTML ***
+npm install express-sanitizer --save
+
 
 
 *** ALL EJS files need to be in a views folder/directory... ***
