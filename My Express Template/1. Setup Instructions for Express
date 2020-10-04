@@ -29,26 +29,3 @@ nodemon ***name of file***  (this package will automatically restart the server 
 
 ^C (to cancel)
 
-
-
-
-
-*** MongoDB and Mongoose Instructions ***
-
-*** Install MongoDB ***
-npm install mongodb --save
-npm install mongodb-core kerberos node-gyp bson --save 
-
-*** Install mongoose ***
-npm install mongoose --save
-
-
-*** to start; you need to keep this running in the background ***
-brew services run mongodb-community
-
-*** to stop... ***
-brew services stop mongodb-community
-
-
-db.collection.drop()
-
