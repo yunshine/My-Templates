@@ -26,6 +26,10 @@ npm install nodemon --save-dev (this package will automatically restart the serv
 npm install express-sanitizer --save
 
 
+*** Authentication Packages ***
+npm install passport passport-local passport-local-mongoose express-session --save
+
+
 
 *** ALL EJS files need to be in a views folder/directory... ***
 
