@@ -42,3 +42,16 @@ nodemon ***name of file***  (this package will automatically restart the server 
 
 ^C (to cancel)
 
+
+
+*** Set up deployed and development database environments ***
+1) in app.js, use: 
+const url = process.env.DATABASEURL || 'mongodb://localhost:27017/collocafe';
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('Connected to database!'))
+  .catch(error => console.log(error.message));
+
+2) on Heroku, go to settings, config vars, key is DATABASEURL and value is mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority

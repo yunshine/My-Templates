@@ -12,11 +12,15 @@ const User = require('./models/user');
 const seedDB = require('./seeds');
 
 // Seed the database...
-seedDB();
+// seedDB();
 
 // where the database lives... on my computer or in a cloud...
 // mongoose.connect('mongodb://localhost:27017/collocafe', {
-mongoose.connect('mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority', {  useNewUrlParser: true,
+// mongoose.connect('mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority', {
+// this will select the database url based on the environment that runs it...
+const url = process.env.DATABASEURL || 'mongodb://localhost:27017/collocafe';
+mongoose.connect(url, {
+  useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => console.log('Connected to database!'))
