@@ -14,8 +14,9 @@ const seedDB = require('./seeds');
 // Seed the database...
 seedDB();
 
-mongoose.connect('mongodb://localhost:27017/collocafe', {
-  useNewUrlParser: true,
+// where the database lives... on my computer or in a cloud...
+// mongoose.connect('mongodb://localhost:27017/collocafe', {
+mongoose.connect('mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority', {  useNewUrlParser: true,
   useUnifiedTopology: true,
 })
   .then(() => console.log('Connected to database!'))
@@ -313,6 +314,6 @@ app.get('*', function (req, res) {
 });
 
 
-app.listen(3000, function () {
-  console.log('The server has started...');
+app.listen(process.env.PORT || 3000, process.env.IP, () => {
+  console.log("The server has started...");
 });
