@@ -2,7 +2,7 @@
 
 
 *** Create a package.json ***
-git init
+npm init
 
 
 *** Install Express & update the dependencies in the package.json file ***
