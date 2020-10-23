@@ -71,15 +71,15 @@ db.-SOMETHING-.remove(\{object for which one you want to update\}): how to
 \pard\pardeftab720\sl480\partightenfactor0
 
 \f2\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 const\cf6 \strokec6  url \cf7 \strokec7 =\cf6 \strokec6  process\cf7 \strokec7 .\cf6 \strokec6 env\cf7 \strokec7 .\cf6 \strokec6 DATABASEURL \cf7 \strokec7 ||\cf6 \strokec6  \cf7 \strokec7 '\cf8 \strokec8 mongodb://localhost:27017/collocafe\cf7 \strokec7 ';\cf6 \cb1 \strokec6 \
-\cb5 mongoose\cf7 \strokec7 .\cf9 \strokec9 connect\cf6 \strokec6 (url\cf7 \strokec7 ,\cf6 \strokec6  \cf7 \strokec7 \{\cf6 \cb1 \strokec6 \
-\cb5   useNewUrlParser\cf7 \strokec7 :\cf6 \strokec6  \cf10 \strokec10 true\cf7 \strokec7 ,\cf6 \cb1 \strokec6 \
-\cb5   useUnifiedTopology\cf7 \strokec7 :\cf6 \strokec6  \cf10 \strokec10 true\cf7 \strokec7 ,\cf6 \cb1 \strokec6 \
-\cf7 \cb5 \strokec7 \}\cf6 \strokec6 )\cb1 \
-\cb5   \cf7 \strokec7 .\cf9 \strokec9 then\cf6 \strokec6 (\cf7 \strokec7 ()\cf6 \strokec6  \cf4 \strokec4 =>\cf6 \strokec6  console\cf7 \strokec7 .\cf9 \strokec9 log\cf6 \strokec6 (\cf7 \strokec7 '\cf8 \strokec8 Connected to database!\cf7 \strokec7 '\cf6 \strokec6 ))\cb1 \
-\cb5   \cf7 \strokec7 .\cf9 \strokec9 catch\cf6 \strokec6 (error \cf4 \strokec4 =>\cf6 \strokec6  console\cf7 \strokec7 .\cf9 \strokec9 log\cf6 \strokec6 (error\cf7 \strokec7 .\cf6 \strokec6 message))\cf7 \strokec7 ;\cf6 \cb1 \strokec6 \
+const\cf6  url \cf7 =\cf6  process\cf7 .\cf6 env\cf7 .\cf6 DATABASEURL \cf7 ||\cf6  \cf7 '\cf8 mongodb://localhost:27017/collocafe\cf7 ';\cf6 \cb1 \
+\cb5 mongoose\cf7 .\cf9 connect\cf6 (url\cf7 ,\cf6  \cf7 \{\cf6 \cb1 \
+\cb5   useNewUrlParser\cf7 :\cf6  \cf10 true\cf7 ,\cf6 \cb1 \
+\cb5   useUnifiedTopology\cf7 :\cf6  \cf10 true\cf7 ,\cf6 \cb1 \
+\cf7 \cb5 \}\cf6 )\cb1 \
+\cb5   \cf7 .\cf9 then\cf6 (\cf7 ()\cf6  \cf4 =>\cf6  console\cf7 .\cf9 log\cf6 (\cf7 '\cf8 Connected to database!\cf7 '\cf6 ))\cb1 \
+\cb5   \cf7 .\cf9 catch\cf6 (error \cf4 =>\cf6  console\cf7 .\cf9 log\cf6 (error\cf7 .\cf6 message))\cf7 ;\cf6 \cb1 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\fs36 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\f1\fs36 \cf0 \kerning1\expnd0\expndtw0 \
 2) on Heroku, go to settings, config vars, key is DATABASEURL and value is mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority\
 }
