@@ -11,10 +11,13 @@
 {\author Yun Chung}}\margl1440\margr1440\vieww27400\viewh21440\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b\fs36 \cf0 *** MongoDB and Mongoose Instructions ***\
+\f0\b\fs32 \cf0 *** MongoDB and Mongoose Instructions ***\
+\
+(also see {\field{\*\fldinst{HYPERLINK "https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/22086130#search"}}{\fldrslt Udemy Guide Section 35}})
+\f1\b0\fs20 \
 
-\f1\b0\fs24  
-\fs34 \
+\fs32 \
+\
 *** Install MongoDB ***\
 npm install mongodb --save\
 		... ??? npm install mongodb-core kerberos node-gyp bson --save \
@@ -24,15 +27,15 @@ npm install mongoose --save\
 \
 \
 *** 
-\f0\b\fs38 \cb2 to start
-\f1\b0\fs34 \cb1 ; you need to keep this running in the background ***\
+\f0\b\fs36 \cb2 to start
+\f1\b0\fs32 \cb1 ; you need to keep this running in the background ***\
 brew services run mongodb-community\
 \
 *** 
-\f0\b\fs38 \cb3 to stop
-\f1\b0\fs34 \cb1 ... ***\
+\f0\b\fs36 \cb3 to stop
+\f1\b0\fs32 \cb1 ... ***\
 brew services stop mongodb-community
-\fs36 \
+\fs34 \
 \
 \
 \
@@ -49,28 +52,28 @@ brew services stop mongodb-community
 \
 \
 db.-SOMETHING-.insert(): inserts data into the -SOMETHING- collection => 
-\f0\b\fs38 CREATE
-\f1\b0\fs36 \
+\f0\b\fs36 CREATE
+\f1\b0\fs34 \
 db.-SOMETHING-.find(): shows everything in that collection => 
-\f0\b\fs38 READ
-\f1\b0\fs36 \
+\f0\b\fs36 READ
+\f1\b0\fs34 \
 db.-SOMETHING-.update(\{object for which one you want to update\}, \{$set: \{object for what you want to change or add\}\}): how to 
-\f0\b\fs38 UPDATE
-\f1\b0\fs36 \
+\f0\b\fs36 UPDATE
+\f1\b0\fs34 \
 db.-SOMETHING-.remove(\{object for which one you want to update\}): how to 
-\f0\b\fs38 DELETE
-\f1\b0\fs36 \
+\f0\b\fs36 DELETE
+\f1\b0\fs34 \
 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b\fs44 \cf3 *** Set up deployed and development database environments ***\
+\f0\b\fs42 \cf3 *** Set up deployed and development database environments ***\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\b0\fs36 \cf0 1) in app.js, use: \
+\f1\b0\fs34 \cf0 1) in app.js, use: \
 \pard\pardeftab720\sl480\partightenfactor0
 
-\f2\fs32 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\f2\fs30 \cf4 \cb5 \expnd0\expndtw0\kerning0
 const\cf6  url \cf7 =\cf6  process\cf7 .\cf6 env\cf7 .\cf6 DATABASEURL \cf7 ||\cf6  \cf7 '\cf8 mongodb://localhost:27017/collocafe\cf7 ';\cf6 \cb1 \
 \cb5 mongoose\cf7 .\cf9 connect\cf6 (url\cf7 ,\cf6  \cf7 \{\cf6 \cb1 \
 \cb5   useNewUrlParser\cf7 :\cf6  \cf10 true\cf7 ,\cf6 \cb1 \
@@ -80,6 +83,6 @@ const\cf6  url \cf7 =\cf6  process\cf7 .\cf6 env\cf7 .\cf6 DATABASEURL \cf7 ||\c
 \cb5   \cf7 .\cf9 catch\cf6 (error \cf4 =>\cf6  console\cf7 .\cf9 log\cf6 (error\cf7 .\cf6 message))\cf7 ;\cf6 \cb1 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\fs36 \cf0 \kerning1\expnd0\expndtw0 \
+\f1\fs34 \cf0 \kerning1\expnd0\expndtw0 \
 2) on Heroku, go to settings, config vars, key is DATABASEURL and value is mongodb+srv://yunshine:ilJC8239@cluster0.c4sfn.mongodb.net/collocafe?retryWrites=true&w=majority\
 }
